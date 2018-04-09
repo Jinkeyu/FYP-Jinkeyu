@@ -95,11 +95,11 @@ User2 = []
 #get the specific datas of user(获取用户具体的用电数据)
 
 i = 0
-while i<5:                                       #user data, even part decide the type of appliance
-    User1.append([])                             #odd part decide the period of appliance
+while i<5:                                       
+    User1.append([])                             
     User1.append([])
-    User1[2*i].append(Appliance[i])
-    User1[2*i+1].append(Period[i])
+    User1[2*i].append(Appliance[i])         #user data, even part decide/choose the type of appliance
+    User1[2*i+1].append(Period[i])          #odd part decide the period of appliance
     i = i+1
 
 i = 0
@@ -142,7 +142,7 @@ for u in range(num_users):
         Best_gene , Best_Results,Best_starttime,Best_endtime = best(Pop, Cost_list,Temp_pop_start,Temp_pop_end)     #get the best gene and the corresponding power start time and end time(找到最优基因及最优解以及最优解对应的供电起始时间)          
         Results.append([Best_Results, Best_starttime, Best_endtime])  #save the best result of each generation(存储每一代的最优结果)
         selection(Pop,Cost_list)                            #copy the new species(新种群开始进行复制)
-        crossover(Pop, Pc)		                    #(对新种群进行交配)
+        crossover(Pop, Pc)		                             #(对新种群进行交配)
         mutation(Pop, Pm)                                   #对种群进行变异
     
     
@@ -161,7 +161,7 @@ for u in range(num_users):
     
 
 for i in range(len(Final_results)):
-    print(Final_results[i][0])     #print minimum value打印最小值
+       print(Final_results[i][0])         #print minimum value打印最小值
 print(Best_Results)                #print optimal solution打印最优解
 print(Best_gene)		              #print the best individual打印最优个体
 print(Best_starttime)              #The optimal Starttime and endtime最佳的用电器开始和结束时间
