@@ -157,7 +157,7 @@ for u in range(num_users):
         Final_results[i].sort()
    
     # TODO
-    const_load = [Final_results,temp_start_time,temp_end_time] # based on Final_results of other users -> the results of the GA for applicance schedule    
+    const_load = [Final_results,Temp_pop_start,Temp_pop_end] # based on Final_results of other users -> the results of the GA for applicance schedule    
     
 
 for i in range(len(Final_results)):
