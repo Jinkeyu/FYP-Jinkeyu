@@ -137,7 +137,7 @@ for u in range(num_users):
     for i in range(Iteration):           #begin genetic algorithm(开始进行遗传算法)
         Temp_pop_start,Temp_pop_end = calobjValue(Pop, Chrom_length, Timelist , Species_size)        # calculate power supply time period(计算供电时间)
         # TODO: Redefine calcostValue function based on const_load
-        Cost_list = calcostValue(Temp_pop_start, Temp_pop_end, u, const_load) #get the electricity price(得到电费价格表)
+        Cost_list = calcostValue(Temp_pop_start, Temp_pop_end, u,) #get the electricity price(得到电费价格表)
         
         Best_gene , Best_Results,Best_starttime,Best_endtime = best(Pop, Cost_list,Temp_pop_start,Temp_pop_end)     #get the best gene and the corresponding power start time and end time(找到最优基因及最优解以及最优解对应的供电起始时间)          
         Results.append([Best_Results, Best_starttime, Best_endtime])  #save the best result of each generation(存储每一代的最优结果)
@@ -157,13 +157,13 @@ for u in range(num_users):
         Final_results[i].sort()
    
     # TODO
-    const_load = [Temp_pop_start, Temp_pop_end] # based on Final_results of other users -> the results of the GA for applicance schedule    
+    const_load = [Final_results,temp_start_time,temp_end_time] # based on Final_results of other users -> the results of the GA for applicance schedule    
     
 
 for i in range(len(Final_results)):
        print(Final_results[i][0])         #print minimum value打印最小值
 print(Best_Results)                #print optimal solution打印最优解
-print(Best_gene)		              #print the best individual打印最优个体
+print(Best_gene)		           #print the best individual打印最优个体
 print(Best_starttime)              #The optimal Starttime and endtime最佳的用电器开始和结束时间
 print(Best_endtime)
 
