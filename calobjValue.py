@@ -144,7 +144,8 @@ def calcostValue(Temp_pop_start,Temp_pop_end,User):
                 User[2*i+1][0][2*j] = Temp_pop_start[Variable][k]
                 User[2*i+1][0][2*j + 1] = Temp_pop_end[Variable][k]
                 Variable = Variable + 1
-        Cost,Time_slots,Timelist,Individual_cost = calculateCost(User)
+        Cost,Time_slots,Timelist,Individual_cost,const_load = calculateCost(User)
+        
         for l in range(len(Individual_cost)):
             Cost_list[l].append(Individual_cost[l])
     return Cost_list
